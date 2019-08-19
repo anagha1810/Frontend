@@ -1,0 +1,6 @@
+<div *ngFor="let course of courses"  class="course-item">
+        <h3 (click)="courseClicked(course)">{{course.title}}</h3>
+        <fa name="edit" (click)="editcourse(course)"></fa>
+        <fa name="trash" (click)="deletecourse(course)"></fa>
+      </div>
+      <button (click)="newcourse()">New course</button>

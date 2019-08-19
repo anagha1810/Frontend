@@ -1,0 +1,12 @@
+.course-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+}
+.course-item fa {
+  font-size: 1.5em;
+  margin: 15px 5px;
+  cursor: pointer;
+}
+fa[name='trash'] {
+  color: crimson;
+}

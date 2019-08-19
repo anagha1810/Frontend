@@ -1,0 +1,10 @@
+<button (click)="logout()">Logout</button>
+<div class="layout">
+  <app-course-list [courses]="courses" (selectcourse)="selectcourse($event)" (deletedcourse)="deletedcourse($event)"
+    (editedcourse)="editcourse($event)" (createNewcourse)="createNewcourse()"></app-course-list>
+  <div>
+    <app-course-details [course]="this.selectedcourse" (updatecourse)="selectcourse($event)"></app-course-details>
+    <app-course-form *ngIf="editedcourse" [course]="this.editedcourse"
+     (courseCreated)="courseCreated($event)" (courseUpdated)="courseUpdated($event)"></app-course-form>
+  </div>
+</div>

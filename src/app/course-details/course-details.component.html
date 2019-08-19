@@ -1,0 +1,24 @@
+<div *ngIf="course">
+        
+        <h1>{{ course.title }}</h1>
+        <iframe src="https://www.youtube.com/embed/Zx09vcYq1oc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" height="260" width="560"></iframe>
+        <br />
+        <fa name="star" [ngClass]="{'orange': course.avg_ratings > 0}"></fa>
+        <fa name="star" [ngClass]="{'orange': course.avg_ratings > 1}"></fa>
+        <fa name="star" [ngClass]="{'orange': course.avg_ratings > 2}"></fa>
+        <fa name="star" [ngClass]="{'orange': course.avg_ratings > 3}"></fa>
+        <fa name="star" [ngClass]="{'orange': course.avg_ratings > 4}"></fa>
+        ({{course.no_of_ratings}})
+        <p>{{ course.description }}</p>
+      
+        <div id="rate-container">
+          <h2>Rate it !!!</h2>
+          <fa *ngFor="let rate of [1,2,3,4,5]" name="star" (mouseenter)="rateHover(rate)"
+          (mouseleave)="rateHovered = 0" (click)="rateClicked(rate)"
+          [ngClass]="{'purple': rateHovered >= rate}"
+          ></fa> 
+        </div>
+      
+         
+      </div>
+ 
